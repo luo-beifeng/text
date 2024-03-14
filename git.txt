@@ -1,0 +1,2 @@
+git config --list  展示配置
+git config user.name   配置名字
