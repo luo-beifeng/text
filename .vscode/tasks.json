@@ -9,8 +9,11 @@
 				"-fdiagnostics-color=always",
 				"-g",
 				"${file}",
+				// "*.cpp",
+				// "*.c"
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+				"${fileDirname}\\${fileBasenameNoExtension}.exe",
+				// "${fileDirname}\\a.exe"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
