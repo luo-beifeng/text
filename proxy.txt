@@ -1,0 +1,2 @@
+netsh winhttp set proxy proxy-server="http://127.0.0.1:7890"
+netsh winhttp set proxy proxy-server="https://127.0.0.1:7890"
