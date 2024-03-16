@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// 二分法
 int main()
 {
     // 定义数组初始位置（每次循环中也要进行改变）
@@ -27,21 +28,21 @@ int main()
     // 判断数组是降序还是升序：(true代表降序)
     if (flag)
     {
-        while (arr[begin] < arr[end])
+        while (arr[begin] > arr[end])
         {
 
             // 二分法核心算法 ：每次将“下标”除二，并且向下取整，该下标将会确定下一次二分法的范围
             int index1 = (begin + end) / 2;
 
             // 二分法核心算法 ：如果被查找数，在数组中间数值对应下标的前面，则执行if 里面的语句
-            if (arr[index1] > count)
+            if (arr[index1] < count)
             {
                 // 更新 下一次数组范围的结束位置
                 end = index1 - 1;
             }
 
              // 二分法核心算法 ：如果被查找数，在数组中间数值对应下标的后面，则执行 else if 里面的语句
-            else if (arr[index1] < count)
+            else if (arr[index1] > count)
             {
                 // 更新 下一次数组范围的开始位置
                 begin = index1 + 1;
@@ -59,15 +60,15 @@ int main()
     // 判断数组是降序还是升序：(false代表升序)
     else 
     {
-        while (arr[begin] > arr[end])
+        while (arr[begin] < arr[end])
         {
 
             int index1 = (begin + end) / 2;
-            if (arr[index1] < count)
+            if (arr[index1] > count)
             {
                 end = index1 - 1;
             }
-            else if (arr[index1] > count)
+            else if (arr[index1] < count)
             {
                 begin = index1 + 1;
             }
