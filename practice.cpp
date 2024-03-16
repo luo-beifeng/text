@@ -12,6 +12,17 @@ int arr[10] = {1,3,5,7,9,2,4,6,8,10};
 // 初始化一个模拟下标，用于模拟数组中的元素
 int index = 0;
 
+// 二分法
+// 初始化被二分法处理数组的开始下标
+int begin = 0;
+
+// 初始化被二分法处理数组的结束下标
+int end = 9;
+
+// 用户输入
+int count = 0;
+cin >> count;
+
  // 快速排序的核心算法
 for (int i = 0; i < 10 ; i++)
 {
@@ -45,12 +56,29 @@ for (int i = 0; i < 10 ; i++)
     }
 }
 
-// 输出排序后的数组
-for (int i = 0; i < 10; i++)
-{
-    cout << arr[i] << " ";
-}
+// 二分法的核心算法
+int index = (begin + end) / 2; // 向下取整
 
+// 判断数组是升序还是降序, 
+bool flag = arr[end] - arr[begin];
+
+// 如果是升序
+while(flag)
+{
+    if (arr[index] > arr[count])
+    {
+        end = index;
+    }
+} 
+
+
+// 输出排序后的数组
+// for (int i = 0; i < 10; i++)
+// {
+//     cout << arr[i] << " ";
+// }
+
+ 
 
 
 }
