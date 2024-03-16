@@ -1,7 +1,35 @@
 #include <iostream>
 using namespace std;
 
-// 选择排序 : 由小到大
+//选择排序（初级选择排序算法）: 由小到大
+/*
+// int main(int argc, char* argv[]){
+  
+//   // 初始化数组
+//   int arr[10] = {1, 3, 5, 7, 9, 2, 4, 6, 8, 10};
+
+//   // 初级选择排序算法(本代码的目标是升序)
+//   for (int i = 0; i < 10; i++)
+//   {
+//     for (int j = i+1; j < 10; j++)
+//     {
+//         if (arr[i] > arr[j])
+//         {
+//             arr[i] += arr[j];
+//             arr[j] = arr[i] - arr[j];
+//             arr[i] = arr[i] - arr[j];
+//         }
+//     }
+//   }
+
+//   for (int i = 0; i < 10; i++)
+//   {
+//     cout << arr[i] << endl;
+//   }
+// }
+*/
+
+// 选择排序（高级选择排序算法） : 由小到大
 int  main()
 {
 

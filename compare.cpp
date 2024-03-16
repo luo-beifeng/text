@@ -7,12 +7,12 @@ int main() {
     int index = 0;
     char ch;
     char ch1;
-    string input2 = "aaaabbbbcccde";
+    string input2 = "";
 
 //用户输入2
     cin >> input2;
 
-    string input1 = "bbbcccder";
+    string input1 = "";
 
 // 用户输入1
     cin >> input1;
