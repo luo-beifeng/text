@@ -12,9 +12,15 @@ int arr[10] = {1,3,5,7,9,2,4,6,8,10};
 // 初始化一个模拟下标，用于模拟数组中的元素
 int index = 0;
 
+// 初始化一个临时变量， 用于最后输出下标
+int temp = -1;
+
 // 二分法
 // 初始化被二分法处理数组的开始下标
 int begin = 0;
+
+// 初始化中间数据的下标
+int index1 = 0;
 
 // 初始化被二分法处理数组的结束下标
 int end = 9;
@@ -57,7 +63,7 @@ for (int i = 0; i < 10 ; i++)
 }
 
 // 二分法的核心算法
-int index = (begin + end) / 2; // 向下取整
+// index = (begin + end) / 2; // 向下取整
 
 // 判断数组是升序还是降序, 
 bool flag = arr[end] - arr[begin];
@@ -65,11 +71,46 @@ bool flag = arr[end] - arr[begin];
 // 如果是升序
 while(flag)
 {
-    if (arr[index] > arr[count])
+    // 二分法的核心算法
+    index1 = (begin + end) / 2;
+    
+    if (arr[index1] > count)
     {
-        end = index;
+        end = index1 - 1;
     }
-} 
+    else if (arr[index1] < count)
+    {
+        begin = index1 + 1;
+    }
+    else
+    {
+        temp = index1;
+        break;
+    }
+}
+//  while(!flag)
+// {
+
+//      // 二分法的核心算法
+//     index = (begin + end) / 2;
+
+//     if (arr[index] < arr[count])
+//     {
+//         begin = index + 1;
+//     }
+//     else if (arr[index] > arr[count])
+//     {
+//         end = index - 1;
+//     }
+//     else
+//     {
+//         temp = index;
+//         break;
+//     }
+     
+// }
+cout << temp << " "; 
+}
 
 
 // 输出排序后的数组
@@ -77,8 +118,3 @@ while(flag)
 // {
 //     cout << arr[i] << " ";
 // }
-
- 
-
-
-}

@@ -2,12 +2,23 @@
 #include <string>
 using namespace std;
 
+// 该代码用于对比两个字符串，并且将第一个字符串拥有的字符，在第二个字符串删除
 int main() {
     int index = 0;
     char ch;
     char ch1;
     string input2 = "aaaabbbbcccde";
+
+//用户输入2
+    cin >> input2;
+
     string input1 = "bbbcccder";
+
+// 用户输入1
+    cin >> input1;
+
+
+// 核心算法！！！ 采用记忆化技术，将出现过的字母，利用计算当前字母与首字母的差值赋值于另一个数组的下标
     bool flag1[26] = {false}; // 标记每个小写字母是否已经出现过
     bool flag2[26] = {false}; // 标记每个大写字母是否已经出现过
     char uniqueChars[26] = {'\0'}; // 存储唯一的字母
