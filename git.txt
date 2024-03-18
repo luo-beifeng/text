@@ -30,7 +30,7 @@ git add .   //用该行代码可以将仓库文件全部上传
 git commit -m “注释：例如 ：第一次提交”
 
 // 选择要提交的分支
-git push -u origin master
+git push -u https://github.com/luo-beifeng/C_exercise.git  master
 
 
 
