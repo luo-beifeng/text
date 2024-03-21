@@ -10,13 +10,15 @@ using namespace std;
     for (int i = 0; i < 10; i++)
     {
         index = i;
-        for (int j = i + 1; j < 10 - 1; j++)
+
+        for (int j = i + 1 ; j < 10 - 1; j++)
         {
             if (arr[index] > arr[j])
             {
                 index = j;
             }
         }
+        
         if (index !=i)
         {
                 arr[i] += arr[index];
