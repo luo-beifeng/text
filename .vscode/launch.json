@@ -9,7 +9,7 @@
             "name": "(gdb) 启动",
             "type": "cppdbg",
             "request": "launch",
-            "program": "E:\\c++_code\\pascal_triangle.exe",
+            "program": "E:\\c++_code\\triangle.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",
