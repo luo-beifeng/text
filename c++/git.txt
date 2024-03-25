@@ -32,6 +32,7 @@ git commit -m “注释：例如 ：第一次提交”
 // 选择要提交的分支
 git push -u https://github.com/luo-beifeng/C_exercise.git  master
 
-
+// ssl验证失败的时候， 用这个命令可以忽略证书问题
+git config http.sslVerify false
 
 
