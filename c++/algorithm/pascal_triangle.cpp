@@ -1,43 +1,57 @@
-#include <stdio.h>
+//杨辉三角
+#include <iostream>
+using namespace std;
+
+int triangle(int nums, int arr[]);
 int main()
 {
-    int index = 0;
-    int count = 0;
-    int flag = 0;
-    int flag1 = 0;
-    scanf("%d", &count);
-    //19
-    while(flag == 0)
+    int nums = 0;
+    int a = 0;
+    int arr[10][10] = {0};
+    for(int i = 0; i < 10; i++)
     {
-        flag1++;
-        index = index + (count % 10)*(count % 10);
-        //81
-        count = count / 10;//1
-        if (index == 1)
-        {
-            flag = 1;
-        }
-        if (count == 0)
-        {
-            count = index;
-            if (flag == 0)
-            index = 0;
 
-        }
-        if(flag1 == 1000000) //无奈之举
+        for(int j = 0; j <= i; j++)
         {
-            break;
+        if(j == 0 || i == j )
+            {
+                arr[i][j] = 1;
+            }
+        else
+            arr[i][j] = arr[i - 1][j - 1] + arr[i -1][j];
         }
-        // count = count1 + count / 10;10
     }
-    if (index == 1)
+    for(int i = 0; i < 10; i++)
     {
-        printf("TRUE");
+        for(int j = 0; j < 10 - i - 1; j++)
+        {
+            cout << " ";
+        }
+        for(int j = 0; j <= i; j++)
+        {
+            if(!(i == j))
+            {
+                cout << arr[i][j] << " ";
+            }
+            else
+                cout << arr[i][j] <<endl;
+                
+        }
     }
-    else
-    {
-        printf("FALSE");
-    }
-    
-    
+
+    //triangle(10, arr);
 }
+
+/*
+int triangle(int nums, int arr[])
+{
+    int a = 0;
+    if (nums == 0)
+    {
+        return 1;
+    }
+    a = triangle(nums - 1, arr);
+    cout << a << endl;
+
+}
+*/
