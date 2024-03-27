@@ -51,6 +51,7 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "typeinfo": "cpp",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "huiwen.h": "c"
     }
 }

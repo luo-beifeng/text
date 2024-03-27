@@ -1,0 +1,38 @@
+git config --list  展示配置
+git config user.name   配置名字
+
+1.注册用户名
+
+git config --global user.name "注册名"
+
+2.注册邮箱
+
+git config --global user.email "注册邮箱"
+
+3.生成ssh
+ssh-keygen -t rsa -C "自己的邮箱"
+
+生成之后在计算机的。ssh文件夹里会有rsa的公钥与私钥
+将公钥上传至自己的setting=>SSH中
+
+// 测试ssh
+ssh -T git@github.com
+
+//初始化为一个git仓库（会含有git文件）
+git init   //已经完成，不再需要
+
+//添加要进行上传的文件，或者文件夹
+git add 文件夹1/ 文件夹2/
+
+git add .   //用该行代码可以将仓库文件全部上传
+
+//添加后进行提交
+git commit -m “注释：例如 ：第一次提交”
+
+// 选择要提交的分支
+git push -u https://github.com/luo-beifeng/C_exercise.git  master
+
+// ssl验证失败的时候， 用这个命令可以忽略证书问题
+git config http.sslVerify false
+
+
