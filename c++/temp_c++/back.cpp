@@ -8,7 +8,7 @@ int main()
     string s = "sadfeergerwqfeq";
     int len = s.length();
     bool dp[len][len];
-    char[] c = s.toCharArray();
+    char c[22] = s.toCharArray();
     // 初始化dp数组
     for (int i = 0; i < s.length(); i++)
     {
