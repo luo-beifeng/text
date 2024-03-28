@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "../head/huiwen.h"
+#include "../head/mine.h"
 int huiwen()
 {
     return 123;

@@ -52,6 +52,7 @@
         "thread": "cpp",
         "typeinfo": "cpp",
         "stdio.h": "c",
-        "huiwen.h": "c"
+        "huiwen.h": "c",
+        "mine.h": "c"
     }
 }
