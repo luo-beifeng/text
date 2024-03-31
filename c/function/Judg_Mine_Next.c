@@ -32,25 +32,16 @@ int Judg_Mine(int arr[][10],int row, int col, int mineModel)
 @param mineModel 雷的标记
 @return 是否是雷的标记
 */
-int (*Judg_Mine_Next(int arr[][10],int row, int col, int mineModel))[10]
+void Judg_Mine_Next(int arr[][10],int row, int col, int mineModel)
 {
-    for (int i = 0; i < row; i++) {
-        for (int j = 0; j < col; j++) {
-            if (arr[i][j] != mineModel) {
-                int count = 0;
-                for (int x = -1; x <= 1; x++) {
-                    for (int y = -1; y <= 1; y++) {
-                        if (i + x >= 0 && i + x < row && j + y >= 0 && j + y < col) {
-                            if (arr[i + x][j + y] == mineModel) {
-                                count++;
-                            }
-                        }
-                    }
-                }
-                arr[i][j] = count;
-                // printf(arr[i][j]);
+    for (int i = 0; i < row; i++) 
+    {
+        for (int j = 0; j < col; j++) 
+        {
+            if (arr[i][j] != mineModel) 
+            {
+                check(arr, i, j, mineModel);
             }
         }
     }
-    return arr;
 }

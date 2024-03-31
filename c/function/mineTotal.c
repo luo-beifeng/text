@@ -16,8 +16,9 @@
 @param mineModel 雷的标记
 @return 返回开发者的雷的总数组
 */
-int (*mineTotal(int randArr[], int num, int arr[][10], int row, int col, int flag1, int mineModel))[10]
+void mineTotal(int randArr[], int num, int arr[][10], int row, int col, int flag1, int mineModel)
 {
+	int temp[3] = {-1,-1,-1};
     
     	// 总雷数布置
 	for (int i = 0; i < 10 ; i++)
@@ -25,9 +26,22 @@ int (*mineTotal(int randArr[], int num, int arr[][10], int row, int col, int fla
 		for (int h= 0; h < randArr[i]; h++ )
 			{
 				// printf("%d ", randArr[i]);
-				flag1 = rand()%10;
+				// flag1 = rand()%10;
+				temp[h] = rand()%9 + 1;
+				for(int k = h-1; k > 0;k--)
+				{
+
+					// 防止两颗雷重合
+					while(temp[k]==temp[h])
+					{
+						temp[h] = rand()%10;
+					}
+					
+				}
+				flag1 = temp[h];
 				for (int j = 0; j < 10; j++)
 					{
+
 			
 						if (flag1 == j)
 						{
@@ -35,10 +49,9 @@ int (*mineTotal(int randArr[], int num, int arr[][10], int row, int col, int fla
 						}
                         
 						
-					}					
+					}	 				
 			// printf("* ");
 		}
 		// printf("\n");
 	}
-    return arr;
 }

@@ -9,15 +9,17 @@ int main(int argc, char* argv[])
 {
 	// 初始化种子
 	srand(time(0));
-	// 初始化雷的个数为5个
-	int mineCount = 20;
+
+	// 初始化雷的个数为10个
+	int mineCount = 10;
 
 	// 布置的雷的个数
 	int mineCount2 = 0;
 	int mine_flag = 0;
 	int flag1 = 0; // 用于判定每行的某个位置是否是雷
 	int const mineModel = 'F';
-
+	int const userModel = '#';
+	int const userModel2 = '*';
 	// 初始化数组
 	int num = 10;
 
@@ -27,7 +29,6 @@ int main(int argc, char* argv[])
 	// 面向使用者
 	int user[10][10] = {0};
 
-
 	//初始化第n行
 	int rowCount = 0;
 
@@ -35,20 +36,22 @@ int main(int argc, char* argv[])
 	int randArr[11] = {0};
 
 	// 随机每行的雷的数量 如果行数大于10或者剩余雷的数量小于0
-    randArr[11] = mineTotal1(randArr, num, mineCount, mineCount2);
+    mineTotal1(randArr, num, mineCount, mineCount2); 
 
+	//总布置雷数
     mineCount2 = randArr[10];
     // printf("%d\n", mineCount2);
 	
     // 布置总雷数
-    arr[10][10] = mineTotal(randArr, num, arr, 10, 10, flag1, mineModel);
+    mineTotal(randArr, num, arr, 10, 10, flag1, mineModel);
 
 	// 雷旁边的数字进行计数
-    arr[10][10] = Judg_Mine_Next(arr, 10, 10, mineModel);
+    Judg_Mine_Next(arr, 10, 10, mineModel);
 
 
 	// 面向使用者的页面
-	user[10][10] = (*users(user, arr, 10, 10, mineModel, &mine_flag))[10];
+	user_init(user, 10, 10);
+	uesr_main(user, 10, 10);
 
     // 面向开发者的页面
     // develop(arr, 10, 10, mineModel);
@@ -70,12 +73,17 @@ int main(int argc, char* argv[])
 
 		// 判断是雷，则跳出
 		mine_flag =  Judg_Mine(arr, row1, col1, mineModel);
-		
+		if(mine_flag == 1)
+		{
+			continue;
+		}
 		// 对用户展开数组
-		user[10][10] = (*users(user, arr, row1, col1, mineModel, &mine_flag))[10];
-		
-		
-		
+		users(user, arr, row1, col1, mineModel, userModel2, userModel, &mine_flag);
+		uesr_main(user, 10, 10);
+
+		// 面向开发者的调试模式
+		// develop(arr, 10, 10, mineModel);
+				
 	}
 }
 
