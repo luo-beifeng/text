@@ -4,12 +4,6 @@
 
 int mine();
 
-int merge(int num, int num2, int (*p)(int, int));
-int add(int num, int num2);
-int sub(int num, int num2);
-int mul(int num, int num2);
-
-/* 扫雷
 void mineTotal(int arr[], int num, int arr1[][10], int row, int col, int flag1, int mineModel);
 void **develop(int arr[][10], int row, int col, int mineModel);
 
@@ -28,6 +22,4 @@ int unfolding(int arr[][10], int user[][10], int row, int col, int mineModel);
 void uesr_main(int user[][10], int row, int col);
 
 void user_init(int user[][10], int row, int col);
-*/
-
 #endif

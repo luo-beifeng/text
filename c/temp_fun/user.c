@@ -71,9 +71,11 @@ void uesr_main(int user[][10], int row, int col)
         {
             if (user[i][j] >= 35)
             printf("%c ", user[i][j]);
-            else{
+            else if(user[i][j] !=0){
                 printf("%d ", user[i][j]);
             }
+            else
+            printf("  ", user[i][j]);
         }
         
     }
