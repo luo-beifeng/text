@@ -53,6 +53,8 @@
         "typeinfo": "cpp",
         "stdio.h": "c",
         "huiwen.h": "c",
-        "mine.h": "c"
+        "mine.h": "c",
+        "stdlib.h": "c",
+        "time.h": "c"
     }
 }

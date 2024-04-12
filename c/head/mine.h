@@ -1,6 +1,8 @@
 #ifndef ARRAY_TOOLS_H
 #define ARRAY_TOOLS_H
-
+#include<stdio.h>
+#include<stdlib.h>
+#include <time.h>
 
 int mine();
 

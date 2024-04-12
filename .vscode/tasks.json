@@ -29,8 +29,8 @@
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
-                // "${file}",  // 指定本文件
-                "${workspaceFolder}\\c\\function\\*.c",  // 指定文件夹下面所有c文件
+                "${file}",  // 指定本文件
+                // "${workspaceFolder}\\c\\function\\*.c",  // 指定文件夹下面所有c文件
                 // "${workspaceFolder}\\c\\temp_fun\\*.c",  // 空格后再拼接上temp_fun下面的所有C文件
                 // "${workspaceFolder}\\c\\head\\*.c",
                 // "-I", // 指定头文件文件夹
