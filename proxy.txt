@@ -1,0 +1,11 @@
+netsh winhttp set proxy proxy-server="http://127.0.0.1:7890"
+netsh winhttp set proxy proxy-server="https://127.0.0.1:7890"
+
+
+win的代理设置方式
+set HTTP_PROXY=http://127.0.0.1:7890
+set HTTPS_PROXY=https://127.0.0.1:7890
+
+linux的代理设置方式
+export HTTP_PROXY=http://127.0.0.1:7890
+export HTTPS_PROXY=https://127.0.0.1:7890

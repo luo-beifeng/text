@@ -1,25 +1,54 @@
 {
-	"version": "2.0.0",
-	"tasks": [
-		{
-			"type": "cppbuild",
-			"label": "C/C++: g++.exe 生成活动文件",
-			"command": "C://msys64//ucrt64//bin//g++.exe",
-			"args": [
-				"-fdiagnostics-color=always",
-				"-g",
-				"${file}",
-				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build",
-			"detail": "编译器: \"D:\\MIN\\bin\\g++.exe\""
-		}
-	]
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe 生成活动文件",
+            "command": "C://msys64//ucrt64//bin//g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}", 
+                // "${workspaceFolder}\\c\\function\\*.cpp",
+                "-o",
+                "${fileDirname}\\..\\excute\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "编译器: \"D:\\MIN\\bin\\g++.exe\""
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe 生成活动文件",
+            "command": "C:\\msys64\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",  // 指定本文件
+                // "${workspaceFolder}\\c\\function\\*.c",  // 指定文件夹下面所有c文件
+                // "${workspaceFolder}\\c\\temp_fun\\*.c",  // 空格后再拼接上temp_fun下面的所有C文件
+                // "${workspaceFolder}\\c\\head\\*.c",
+                // "-I", // 指定头文件文件夹
+                // "E:\\c++_code\\c\\head\\",
+                "-o", // 输出文件名字
+                "${fileDirname}\\..\\excute\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"  // 当前目录
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "调试器生成的任务。"
+        }
+    ]
 }
